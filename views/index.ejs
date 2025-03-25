@@ -1,0 +1,90 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="fluid-container">
+        <div class="row justify-content-center my-3">
+            <div class="col-md-5 intro m-2">
+                <h1 class="playfair-display">Latest Added</h1>
+                <div class="latest-books">
+                    <% latestReadBooks.forEach(book => { %>
+                        <img class="latest-book" src="<%= book.cover %>">
+                   <% }) %>
+               </div> 
+            </div>
+            <div class="col-md-4 intro m-2">
+                <div class="intro-text">
+                    <h3>My Personal Library</h3>
+                    <h5>All my thoughts, reviews and ratings of the books I've read.
+                        You can sort them by title, recency or my rating! 
+
+                    </h5><br>
+                    <div>
+                        <h1><%= booksWithReviews.length %></h1>  
+                        <p>books noted!</p>
+                    </div>
+                      
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="fluid-container all-reviews mt-4">
+        <div class="review-intro m-2 p-3">
+           <h2 class="playfair-display">My Reviews</h2>
+            <p>Here you can read all my thoughts and feelings about the 
+            books I've read and added to my colletion.</p> 
+        </div>
+        
+        <div class="sort px-4 mx-3">
+          <form  method="post" action="/sort">
+                
+                <input type="radio" name="sort" value="rating DESC">
+                <label class="" for="rating DESC">Rating</label>
+                <input type="radio" name="sort" value="title">
+                <label for="title">Title</label>
+                <input type="radio" name="sort" value="read_at DESC">
+                <label for="read_at DESC">Recency</label>
+                <input class="custom-btn" type="submit" value="Sort">
+                
+            </form>   
+        </div>
+       
+        
+        
+           <% booksWithReviews.forEach(book => { %>
+            <div class="book-review my-4">
+                <div class="review">
+                    <img class="cover" src="<%= book.cover %>" height="450px" width="300px">
+                </div>
+                <div class="review">
+                    <h2><%= book.title %></h2>
+                    <h5 class="author"><%= book.author %></h5>
+                    <p> <%= book.review %></p>
+                    <% for(let i = 0; i<5; i++){ %>
+                        <% if( i<book.rating){ %>
+                            <span class="fa fa-star checked"></span>
+                       <% } else { %>
+                            <span class="fa fa-star"></span>
+                       <% } %>
+                    <%}%>
+                    <div class="buttons my-4">
+                       <form method="get" action="/edit/<%= book.id %>">
+                            <input type="hidden" name="bookId" value="<%= book.id %>">
+                            <input class="edit-btn custom-btn" type="submit" value="Edit">
+                        </form>
+                        <form method="post" action="/delete/<%= book.id %>">
+                            <input  type="hidden" name="bookId" value="<%= book.id %>">
+                            <input class="delete-btn custom-btn" type="submit" value="Delete">
+                        </form> 
+                    </div>
+                    
+                </div>
+                
+           </div>
+            <% })%>
+    </div>
+        
+        
+
+<%- include("partials/footer.ejs") %>

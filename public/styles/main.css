@@ -1,0 +1,295 @@
+.body{
+    overflow-x: hidden;
+    background-color: #f1ebdf ;
+}
+
+
+.custom-hero{
+    background-image: url("../images/background.png");
+    background-color: #8a947c;
+    color: white;
+    padding: 11rem;
+    justify-items: center;
+}
+
+.custom-hero p{
+    font-size: 1.5rem;
+}
+
+.hero-content{
+    width: max-content;
+    justify-items: center;
+    padding: 45px;
+}
+
+.title{
+    margin: 20px;
+    font-size: 3rem;
+  }
+
+.search{
+    width: 600px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    position: relative;
+}
+
+.search:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+
+.bookDropdown{
+    width: 450px;
+    list-style: none;
+    border: none;
+    border-radius: 15px;
+    position: absolute; 
+    background: white; 
+    z-index: 100; 
+    overflow-y: auto; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+    display: none; 
+    color: rgb(15, 15, 15);
+}
+
+.latest-books{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 15px;
+}
+
+.intro{
+    background-color: rgb(223, 223, 223);
+    border-radius: 15px;
+    justify-items: center;
+    align-content: center;
+    padding: 10px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.book-review{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap:15px;
+    background-color: #eae9e9;
+    border-radius: 8px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.all-reviews{
+    background-color: #f3f3f3;
+    padding: 4rem;;
+}
+
+.review{
+    padding: 20px;
+}
+
+.author{
+    color: rgba(0, 0, 0, 0.465);
+}
+
+.cover{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.custom-btn{
+    padding: 5px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15); 
+}
+
+.edit-btn{
+    background-color: #8a947c;
+}
+
+.delete-btn{
+    background-color: #b89a95;
+}
+
+.custom-btn:hover{
+    filter: brightness(85%);
+}
+
+.buttons{
+    display: flex;
+}
+
+.sort{
+    background-color: #8a947c;
+    width: max-content;
+    border-radius: 20px;
+}
+
+.sort input{
+    margin-left: 10px;
+}
+
+.review-text {
+    margin-top: 35px;
+    width: 700px;
+    height: 350px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none; 
+    white-space: pre-wrap; 
+}
+
+
+footer{
+    background-color: #8a947c;
+    padding: 5rem;
+    text-align: center;
+    color: white;
+}
+
+.checked {
+    color: orange;
+  }
+
+  .title-link{
+    text-decoration: none;
+    color: #f8f4ec;
+  }
+
+.intro-text{
+    justify-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.intro-text h1{
+    color: #8a947c;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.intro-text p{
+    color: #828282;
+}
+
+.intro-text div{
+    border: 2px #828282 solid;
+    padding: 5px 15px;
+    border-radius: 8px;
+    background-color: rgb(230, 230, 230);
+}
+
+
+.socials a{
+    margin: 20px;
+    color: #f1ebdf;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+.rad-label {
+    display: flex;
+    align-items: center;
+  
+    border-radius: 100px;
+    padding: 14px 16px;
+    margin: 10px 0;
+  
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .rad-label:hover,
+  .rad-label:focus-within {
+    background: hsla(0, 0%, 80%, .14);
+  }
+  
+  .rad-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+  }
+  
+  .rad-design {
+    width: 22px;
+    height: 22px;
+    border-radius: 100px;
+  
+    background: linear-gradient(to right bottom, hsl(154, 97%, 62%), hsl(225, 97%, 62%));
+    position: relative;
+  }
+  
+  .rad-design::before {
+    content: '';
+  
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  
+    background: hsl(0, 0%, 90%);
+    transform: scale(1.1);
+    transition: .3s;
+  }
+  
+  .rad-input:checked+.rad-design::before {
+    transform: scale(0);
+  }
+  
+  .rad-text {
+    color: hsl(0, 0%, 60%);
+    margin-left: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+  
+    transition: .3s;
+  }
+  
+  .rad-input:checked~.rad-text {
+    color: hsl(0, 0%, 40%);
+  }
+  
+  /* fonts */
+  .dancing-script {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .playfair-display {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .dm-sans {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+  }
+  

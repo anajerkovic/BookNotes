@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container py-4 my-2">
+    <h1><%= book.title %></h1>
+    <h3 class="author">by <%= book.author %></h3>
+
+    <div class="book-review my-3">
+        <img width="500px" src="<%= book.cover %>">
+        <form class="m-3" action="/edit/<%= book.id %>" method="POST">
+            <textarea class="review-text" name="review" placeholder="Leave a review..." required><%= book.review %></textarea>
+            <br>
+            <div class="m-4">
+              <% for(let i = 1; i <= 5; i++) { %>
+                <input type="radio" name="rating" value="<%= i %>" <% if(book.rating == i) { %> checked <% } %>>
+                <label for="<%= i %>"><%= i %></label>
+                <% } %>
+                <br>  
+            </div>
+            
+            <input class="custom-btn my-4" type="submit" value="Update Review">
+        </form> 
+    </div>
+     
+</div>
+    
+
+
+
+<%- include("partials/footer.ejs") %>
